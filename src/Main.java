@@ -1,14 +1,16 @@
 public class Main {
+
+    private static final String INVALID_VALUE_MESSAGE = "Invalid Value";
     public static void main(String[] args) {
 
-        System.out.println(getDurationString(60, 50));
+        System.out.println(getDurationString(610, 4));
         System.out.println( getDurationString(3600));
     }
 
     public static String getDurationString(int minutes, int seconds) {
         if (minutes < 0 || seconds < 0 || seconds > 59) {
 
-            return "Invalid value";
+            return INVALID_VALUE_MESSAGE;
         }
 
         int totalMins = minutes + (seconds / 60);
@@ -42,7 +44,7 @@ public class Main {
 
     public static String getDurationString(int seconds) {
         if (seconds < 0) {
-            return "Invalid value";
+            return INVALID_VALUE_MESSAGE;
         }
 
         int mins = seconds / 60;
